@@ -25,6 +25,11 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
             self.changeText(oldValue: oldValue, newValue: text)
         }
     }
+    open override var font: UIFont? {
+        didSet {
+            redraw()
+        }
+    }
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(frame: self.bounds)
         stackView.axis = .horizontal
@@ -86,6 +91,7 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
             let label = Label(frame: .zero)
             label.textColor = _textColor
             label.font = font
+            print(font?.pointSize, label.font.pointSize)
             label.isUserInteractionEnabled = false
             self.stackView.addArrangedSubview(label)
         }
