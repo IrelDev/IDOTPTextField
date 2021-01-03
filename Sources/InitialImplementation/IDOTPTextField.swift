@@ -139,6 +139,9 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
             updateFocus()
         }
     }
+    open override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        false
+    }
     open override func caretRect(for position: UITextPosition) -> CGRect {
         let index = self.text?.count ?? 0
         guard index < stackView.arrangedSubviews.count else {

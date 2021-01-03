@@ -14,10 +14,17 @@ class ViewController: UIViewController {
         textField.numberOfDigits = 4
         textField.spacing = 10
         textField.boxBackgroundColor = .clear
-        textField.borderHeight = 1
+        textField.borderHeight = 1.5
         textField.borderColor = .gray
-        textField.textColor = .red
+        textField.textColor = .systemBlue
         textField.font = UIFont.systemFont(ofSize: 30)
+        
+        textField.boxPlaceholder = "-"
+        textField.boxPlaceholderColor = .gray
+//        textField.activeBoxBackgroundColor = .red
+//        textField.filledBoxBackgroundColor = .blue
+//        textField.activeBorderColor = .blue
+//        textField.filledBorderColor = .blue
         
         textField.translatesAutoresizingMaskIntoConstraints = false
         
@@ -34,7 +41,9 @@ class ViewController: UIViewController {
             textField.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5)
         ])
     }
-
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        textField.becomeFirstResponder()
+    }
 }
 
