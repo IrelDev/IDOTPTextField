@@ -17,4 +17,9 @@ public class IDOTPTextFieldWithOverridenDelegate: IDOTPInitialTextField {
     public override func textFieldDidEndEditing(_ textField: UITextField) {
         super.textFieldDidEndEditing(textField)
     }
+    public override func textFieldDidChange(textField: UITextField) {
+        super.textFieldDidChange(textField: textField)
+        
+        //API CALL
+    }
 }

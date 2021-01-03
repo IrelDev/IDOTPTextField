@@ -64,7 +64,7 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
         borderStyle = .none
         
         textContentType = .oneTimeCode
-        addTarget(self, action: #selector(textChanged), for: .editingChanged)
+        addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
         
         delegate = self
         addSubview(stackView)
@@ -110,7 +110,7 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
         }
         labels[focusIndex].isActive = false
     }
-    @objc private func textChanged() {
+    @objc public func textFieldDidChange(textField: UITextField) {
         guard let text = text, text.count <= numberOfDigits else { return }
         
         labels.enumerated().forEach({ (i, label) in
