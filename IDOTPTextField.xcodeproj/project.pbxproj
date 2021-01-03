@@ -8,12 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C22BD2C025A1F759000D654D /* IDOTPTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = C22BD2BE25A1F759000D654D /* IDOTPTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C22BD2D225A1FA14000D654D /* IDOTPLabelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22BD2D125A1FA14000D654D /* IDOTPLabelProtocol.swift */; };
+		C22BD2D525A1FA45000D654D /* IDOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22BD2D425A1FA45000D654D /* IDOTPTextField.swift */; };
+		C22BD2DB25A1FDD4000D654D /* IDOTPInitialTextFieldLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22BD2DA25A1FDD4000D654D /* IDOTPInitialTextFieldLabel.swift */; };
+		C22BD2DE25A1FDFF000D654D /* IDOTPInitialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22BD2DD25A1FDFF000D654D /* IDOTPInitialTextField.swift */; };
+		C22BD2E225A20213000D654D /* IDOTPTextFieldWithOverridenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22BD2E125A20213000D654D /* IDOTPTextFieldWithOverridenDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C22BD2BB25A1F759000D654D /* IDOTPTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IDOTPTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C22BD2BE25A1F759000D654D /* IDOTPTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IDOTPTextField.h; sourceTree = "<group>"; };
 		C22BD2BF25A1F759000D654D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C22BD2D125A1FA14000D654D /* IDOTPLabelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDOTPLabelProtocol.swift; sourceTree = "<group>"; };
+		C22BD2D425A1FA45000D654D /* IDOTPTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDOTPTextField.swift; sourceTree = "<group>"; };
+		C22BD2DA25A1FDD4000D654D /* IDOTPInitialTextFieldLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDOTPInitialTextFieldLabel.swift; sourceTree = "<group>"; };
+		C22BD2DD25A1FDFF000D654D /* IDOTPInitialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDOTPInitialTextField.swift; sourceTree = "<group>"; };
+		C22BD2E125A20213000D654D /* IDOTPTextFieldWithOverridenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDOTPTextFieldWithOverridenDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +56,23 @@
 		C22BD2C725A1F760000D654D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C22BD2E525A20371000D654D /* InitialImplementation */,
+				C22BD2E125A20213000D654D /* IDOTPTextFieldWithOverridenDelegate.swift */,
 				C22BD2BE25A1F759000D654D /* IDOTPTextField.h */,
 				C22BD2BF25A1F759000D654D /* Info.plist */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		C22BD2E525A20371000D654D /* InitialImplementation */ = {
+			isa = PBXGroup;
+			children = (
+				C22BD2D125A1FA14000D654D /* IDOTPLabelProtocol.swift */,
+				C22BD2D425A1FA45000D654D /* IDOTPTextField.swift */,
+				C22BD2DA25A1FDD4000D654D /* IDOTPInitialTextFieldLabel.swift */,
+				C22BD2DD25A1FDFF000D654D /* IDOTPInitialTextField.swift */,
+			);
+			path = InitialImplementation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +117,7 @@
 				TargetAttributes = {
 					C22BD2BA25A1F759000D654D = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 				};
 			};
@@ -130,6 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22BD2DB25A1FDD4000D654D /* IDOTPInitialTextFieldLabel.swift in Sources */,
+				C22BD2D525A1FA45000D654D /* IDOTPTextField.swift in Sources */,
+				C22BD2DE25A1FDFF000D654D /* IDOTPInitialTextField.swift in Sources */,
+				C22BD2D225A1FA14000D654D /* IDOTPLabelProtocol.swift in Sources */,
+				C22BD2E225A20213000D654D /* IDOTPTextFieldWithOverridenDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +290,7 @@
 		C22BD2C425A1F759000D654D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A46C2G8GT3;
@@ -279,6 +309,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ireldev.IDOTPTextField;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -287,6 +318,7 @@
 		C22BD2C525A1F759000D654D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A46C2G8GT3;
