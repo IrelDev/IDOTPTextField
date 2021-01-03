@@ -43,9 +43,11 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
     private var _textColor: UIColor?
     open override var textColor: UIColor? {
         didSet {
-            if _textColor == nil {
-                _textColor = oldValue
-            }
+            if textColor == .clear { return }
+            _textColor = textColor
+            redraw()
+            
+            textColor = .clear
         }
     }
     public override init(frame: CGRect) {
@@ -91,7 +93,6 @@ open class IDOTPTextField<Label: IDOTPLabelProtocol>: UITextField, UITextFieldDe
             let label = Label(frame: .zero)
             label.textColor = _textColor
             label.font = font
-            print(font?.pointSize, label.font.pointSize)
             label.isUserInteractionEnabled = false
             self.stackView.addArrangedSubview(label)
         }
